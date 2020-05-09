@@ -7,5 +7,5 @@ jobs:
       script:
         - docker build -t CItest .
         - echo $DOCKER_PASSWORD | docker login -u "$DOCKER_USERNAME" --password-stdin
-        - docker tag CItest $DOCKER_USERNAME/CItest:$TRAVIS_BUILD_ID
-        - docker push $DOCKER_USERNAME/CItest
+        - docker tag citest $DOCKER_USERNAME/citest:$TRAVIS_BUILD_ID
+        - docker push $DOCKER_USERNAME/citest
