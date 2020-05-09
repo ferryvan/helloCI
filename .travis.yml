@@ -5,7 +5,7 @@ jobs:
   include:
     - stage: build
       script:
-        - docker build -t CItest .
+        - docker build -t citest .
         - echo $DOCKER_PASSWORD | docker login -u "$DOCKER_USERNAME" --password-stdin
         - docker tag citest $DOCKER_USERNAME/citest:$TRAVIS_BUILD_ID
         - docker push $DOCKER_USERNAME/citest
